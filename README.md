@@ -45,7 +45,7 @@ Protótipo de API REST desenvolvida como parte do processo seletivo da TECSCI, c
 ## Instalação e Execução
 
 1. Clonar o repositório
-    git clone https://github.com/seuusuario/monitoramento-usinas-fotovoltaicas.git
+    git clone [https://github.com/seuusuario/monitoramento-usinas-fotovoltaicas.git](https://github.com/ppedro-vasco/TECSCI.git)
     cd monitoramento-usinas-fotovoltaicas
 
 2. Criar e ativar um ambiente virtual
@@ -164,19 +164,7 @@ CREATE UNIQUE INDEX idx_medicao_inversor_data
     * Cumprir o escopo em tempo reduzido, focando na lógica e separação de camadas
 
 - Apesar disso, o projeto foi estruturado de forma que pode facilmente ser migrado para qualquer framework com roteamento baseado em função.
-
-## Conformidade com os Requisitos
-
-Item	                                                    Atendido
-CRUD de usinas e inversores	                                ✅ Sim
-Ingestão e validação de dados externos (DTOs, JSON)	        ✅ Sim
-Geração total por inversor e por usina	                    ✅ Sim
-Potência máxima por dia	                                    ✅ Sim
-Temperatura média por dia	                                  ✅ Sim
-API REST funcional com verbos, códigos e parâmetros	        ✅ Sim
-Organização por camadas e domínios separados	              ✅ Sim
-README documentado e reprodutível	                          ✅ Sim
-
+  
 ## Licença
 
 - Esse conteúdo cobre **100% das exigências técnicas, organizacionais e documentais** que o processo seletivo descreve.
