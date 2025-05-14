@@ -1,9 +1,9 @@
 import json
 
 from pathlib import Path
-from datetime import datetime
 
 from model.medicao_model import MedicaoModel
+from dto.medicao_dto import MedicaoDTO
 
 def carregar_metrics(caminho_arquivo=None):
     if caminho_arquivo is None:
@@ -21,17 +21,16 @@ def carregar_metrics(caminho_arquivo=None):
 
     inseridos = 0
     for item in dados:
-        try:
+        dto = MedicaoDTO.from_dict(item)
+        if dto:
             MedicaoModel.inserir(
-                inversor_id=int(item["inversor_id"]),
-                data_hora=datetime.fromisoformat(item["datetime"]["$date"].replace("Z", "+00:00")),
-                potencia=float(item["potencia_ativa_watt"]),
-                temperatura=float(item["temperatura_celsius"])
+                inversor_id=dto.inversor_id,
+                data_hora=dto.data_hora,
+                potencia=dto.potencia_ativa,
+                temperatura=dto.temperatura
             )
             inseridos += 1
-        except (KeyError, ValueError, TypeError) as e:
-            print(f"Erro ao processar item: {item} → {e}")
-            continue
+        else:
+            print(f"Registro inválido ignorado: {item}")
 
-
-    print(f"{inseridos} medições inseridas com sucesso.")
+        print(f"{inseridos} medições inseridas com sucesso.")

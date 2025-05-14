@@ -8,7 +8,8 @@ class MedicaoModel:
         cur = conn.cursor()
         cur.execute("""
             INSERT INTO medicao (inversor_id, data_hora, potencia_ativa_watt, temperatura_celsius)
-            VALUES (%s, %s, %s, %s);
+            VALUES (%s, %s, %s, %s)
+            ON CONFLICT (inversor_id, data_hora) DO NOTHING;
         """, (inversor_id, data_hora, potencia, temperatura))
         conn.commit()
         cur.close()
