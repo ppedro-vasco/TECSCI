@@ -1,7 +1,5 @@
-### Dependências principais ###
-psycopg2-binary==2.9.9  # Conexão com PostgreSQL (versão binária para Windows)
-python-dateutil==2.8.2  # Tratamento avançado de datas (ISO 8601)
+psycopg2-binary==2.9.9
 
-### Dependências de desenvolvimento ###
-pylint==3.0.3           # Análise estática de código
-autopep8==2.0.2         # Formatação automática PEP-8
+# Ferramentas de desenvolvimento
+pylint==3.0.3
+autopep8==2.0.2
